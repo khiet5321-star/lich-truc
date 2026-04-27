@@ -18,7 +18,7 @@ function loadData() {
             document.getElementById('lichTable').style.display = 'table';
         })
         .catch(error => {
-            document.getElementById('loading').innerHTML = 'Lỗi kết nối dữ liệu!';
+            document.getElementById('loading').innerHTML = 'Lỗi kết nối: Vui lòng kiểm tra lại Google Sheets!';
         });
 }
 loadData();
