@@ -9,6 +9,7 @@ function loadData() {
                 html += `<tr>
                     <td>${item.ngay || ''}</td>
                     <td>${item.ten || ''}</td>
+                    <td>${item.nguoiGiup || ''}</td>
                     <td><b style="color:${item.trangThai && item.trangThai.includes('Vắng') ? 'red' : 'green'}">${item.trangThai || 'Bình thường'}</b></td>
                 </tr>`;
             });
