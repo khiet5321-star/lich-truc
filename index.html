@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lịch Trực</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; padding: 20px; text-align: center; background-color: #f4f4f9; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+        button { padding: 8px 15px; background: #e74c3c; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>LỊCH TRỰC</h2>
+    <div id="loading">Đang tải dữ liệu từ Sheets...</div>
+    <table id="lichTable" style="display:none">
+        <thead>
+            <tr>
+                <th>Ngày</th>
+                <th>Tên</th>
+                <th>Trạng thái</th>
+            </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
