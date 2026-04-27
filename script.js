@@ -6,16 +6,18 @@ function loadData() {
         .then(data => {
             let html = '';
             data.forEach(item => {
-                // Logic: Nếu cột trangThai có chữ "Vắng" thì KHÔNG tích, ngược lại thì TÍCH
+                // Logic: Nếu trong Sheets ghi "Vắng" thì tích vào ô Checkbox
                 const isVang = item.trangThai && item.trangThai.toLowerCase().includes('vắng');
-                const checkStatus = isVang ? '' : 'checked';
-                const rowStyle = isVang ? 'class="absent-text"' : '';
+                const checkedAttr = isVang ? 'checked' : '';
+                const rowClass = isVang ? 'class="absent-row"' : '';
 
-                html += `<tr ${rowStyle}>
-                    <td><input type="checkbox" ${checkStatus} disabled></td>
+                html += `<tr ${rowClass}>
+                    <td class="name-cell">${item.ten || ''}</td>
                     <td>${item.ngay || ''}</td>
-                    <td>${item.ten || ''}</td>
-                    <td class="helper-text">${item.nguoiGiup || ''}</td>
+                    <td class="checkbox-cell">
+                        <input type="checkbox" ${checkedAttr} disabled>
+                    </td>
+                    <td style="font-style: italic; color: #27ae60;">${item.nguoiGiup || ''}</td>
                 </tr>`;
             });
             document.getElementById('content').innerHTML = html;
@@ -23,7 +25,7 @@ function loadData() {
             document.getElementById('lichTable').style.display = 'table';
         })
         .catch(error => {
-            document.getElementById('loading').innerHTML = '❌ Lỗi tải dữ liệu. Hãy kiểm tra Google Sheets!';
+            document.getElementById('loading').innerHTML = '❌ Lỗi kết nối Sheets. Hãy kiểm tra lại!';
         });
 }
 loadData();
