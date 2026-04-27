@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Trực</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        h2 { color: #333; margin-bottom: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 800px; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        th { background-color: #4CAF50; color: white; padding: 12px; text-align: center; }
+        td { border-bottom: 1px solid #ddd; padding: 12px; text-align: center; color: #555; }
+        tr:hover { background-color: #f1f1f1; }
+        #loading { margin-top: 20px; color: #888; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h2>LỊCH TRỰC</h2>
+    <table id="lichTable" style="display:none;">
         <thead>
             <tr>
                 <th>Ngày</th>
@@ -6,4 +25,9 @@
                 <th>Trạng thái</th>
             </tr>
         </thead>
-        
+        <tbody id="content"></tbody>
+    </table>
+    <div id="loading">Đang tải dữ liệu từ Sheets...</div>
+    <script src="script.js"></script>
+</body>
+</html>
